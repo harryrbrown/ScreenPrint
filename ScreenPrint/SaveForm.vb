@@ -1,5 +1,6 @@
 ﻿Imports System.Net
 Imports System.IO
+Imports System.Runtime.InteropServices
 
 Public Class SaveForm
 
@@ -78,10 +79,15 @@ Public Class SaveForm
     Private Sub SaveForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         bounds = SelectableRegion2
-        screenshot = New System.Drawing.Bitmap(bounds.Width, bounds.Height, System.Drawing.Imaging.PixelFormat.Format32bppRgb)
+        screenshot = New System.Drawing.Bitmap(bounds.Width * getScalingFactor(), bounds.Height * getScalingFactor(), System.Drawing.Imaging.PixelFormat.Format32bppRgb)
         graph = Graphics.FromImage(screenshot)
         SelectableRegion2.Hide()
-        graph.CopyFromScreen(SelectableRegion2.Bounds.X, SelectableRegion2.Bounds.Y, 0, 0, bounds.Size, CopyPixelOperation.SourceCopy)
+
+        Dim blockRegionSize = bounds.Size
+        blockRegionSize.Height = blockRegionSize.Height * getScalingFactor()
+        blockRegionSize.Width = blockRegionSize.Width * getScalingFactor()
+
+        graph.CopyFromScreen(SelectableRegion2.Bounds.X * getScalingFactor(), SelectableRegion2.Bounds.Y * getScalingFactor(), 0, 0, blockRegionSize, CopyPixelOperation.SourceCopy)
         SelectableRegion2.Show()
     End Sub
 
@@ -111,9 +117,6 @@ Public Class SaveForm
         Clipboard.ListView1.LargeImageList = Form1.imageListLarge
 
         Form1.noOfSaves += 1
-
-
-
 
 
         If My.Settings.Experiments = True Then
@@ -157,7 +160,7 @@ Public Class SaveForm
                 End If
             Next
         Next
-        
+
     End Function
 
     Private Sub httpclient_DownloadFileCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs) Handles httpclient.DownloadFileCompleted
@@ -166,4 +169,33 @@ Public Class SaveForm
         End If
 
     End Sub
+
+
+#Region "Get DPI"
+
+    <DllImport("gdi32.dll")>
+    Private Shared Function GetDeviceCaps(hdc As IntPtr, nIndex As Integer) As Integer
+
+    End Function
+
+    Public Enum DeviceCap
+        VERTRES = 10
+        DESKTOPVERTRES = 117
+
+        ' http://pinvoke.net/default.aspx/gdi32/GetDeviceCaps.html
+    End Enum
+
+    Public Function getScalingFactor() As Single
+        Dim g As Graphics = Graphics.FromHwnd(IntPtr.Zero)
+        Dim desktop As IntPtr = g.GetHdc()
+        Dim LogicalScreenHeight As Integer = GetDeviceCaps(desktop, CInt(DeviceCap.VERTRES))
+        Dim PhysicalScreenHeight As Integer = GetDeviceCaps(desktop, CInt(DeviceCap.DESKTOPVERTRES))
+
+        Dim ScreenScalingFactor As Single = CSng(PhysicalScreenHeight) / CSng(LogicalScreenHeight)
+
+        Return ScreenScalingFactor
+        ' 1.25 = 125%
+    End Function
+#End Region
+
 End Class

@@ -415,9 +415,12 @@ Public Class Hotkey
             windowRect.bottom = windowRect.top + height
         End If
 
+        width *= SaveForm.getScalingFactor()
+        height *= SaveForm.getScalingFactor()
+
         Dim img As Bitmap = New Bitmap(width, height)
         Dim gr As Graphics = Graphics.FromImage(img)
-        gr.CopyFromScreen(windowRect.left, windowRect.top, 0, 0, New Size(width, height))
+        gr.CopyFromScreen(windowRect.left * SaveForm.getScalingFactor(), windowRect.top * SaveForm.getScalingFactor(), 0, 0, New Size(width, height))
 
         Return img
 
@@ -484,9 +487,14 @@ Public Class Hotkey
         Select Case hotkeyID
             Case 1
                 bounds = Screen.PrimaryScreen.Bounds
-                screenshot = New System.Drawing.Bitmap(bounds.Width, bounds.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+                screenshot = New System.Drawing.Bitmap(bounds.Width * SaveForm.getScalingFactor(), bounds.Height * SaveForm.getScalingFactor(), System.Drawing.Imaging.PixelFormat.Format32bppArgb)
                 graph = Graphics.FromImage(screenshot)
-                graph.CopyFromScreen(bounds.X, bounds.Y, 0, 0, bounds.Size, CopyPixelOperation.SourceCopy)
+
+                Dim blockRegionSize = bounds.Size
+                blockRegionSize.Height = blockRegionSize.Height * SaveForm.getScalingFactor()
+                blockRegionSize.Width = blockRegionSize.Width * SaveForm.getScalingFactor()
+
+                graph.CopyFromScreen(bounds.X * SaveForm.getScalingFactor(), bounds.Y * SaveForm.getScalingFactor(), 0, 0, blockRegionSize, CopyPixelOperation.SourceCopy)
                 Form1.PictureBox1.Image = screenshot
 
                 If System.IO.Directory.Exists(My.Settings.SaveDir) Then

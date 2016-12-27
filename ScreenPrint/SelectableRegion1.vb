@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
+Imports System.Runtime.InteropServices
 
 Public Class SelectableRegion1
-
     Dim topleftX, topleftY
 
     Private Sub SelectableRegion1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -24,6 +24,7 @@ Public Class SelectableRegion1
     End Sub
 
     Private Sub SelectableRegion1_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+
         If Cursor.Position.X > topleftX And Cursor.Position.Y > topleftY Then
             SelectableRegion2.Size = Cursor.Position - SelectableRegion2.Location
             topleftX = SelectableRegion2.Location.X
@@ -61,7 +62,7 @@ Public Class SelectableRegion1
         Me.Hide()
 
         SaveForm.Show()
-        
+
     End Sub
 
 #Region "Boring stuff"
