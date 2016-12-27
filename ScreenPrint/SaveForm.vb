@@ -13,12 +13,10 @@ Public Class SaveForm
     Private WithEvents httpclient As WebClient
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         Try
             SelectableRegion2.Hide()
             SelectableRegion2.BackgroundImage = screenshot
             bmp = SelectableRegion2.BackgroundImage
-
 
             Dim month As String = Date.Today.Month.ToString
             If Len(month) = 1 Then
@@ -62,8 +60,6 @@ Public Class SaveForm
         Catch ex As Exception
             MsgBox("Unable to save captured region.", MsgBoxStyle.Critical, "Error")
         End Try
-
-
     End Sub
 
     Private Sub SaveForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -77,7 +73,6 @@ Public Class SaveForm
     End Sub
 
     Private Sub SaveForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         bounds = SelectableRegion2
         screenshot = New System.Drawing.Bitmap(bounds.Width * getScalingFactor(), bounds.Height * getScalingFactor(), System.Drawing.Imaging.PixelFormat.Format32bppRgb)
         graph = Graphics.FromImage(screenshot)
@@ -111,13 +106,9 @@ Public Class SaveForm
         item1.ImageIndex = Form1.noOfSaves
         item1.Tag = bmp
         Clipboard.ListView1.Items.AddRange(New ListViewItem() {item1})
-
-        'Form1.item1.SubItems.Add(Date.Today.Year.ToString + month + day + "_" + DateTime.Now.ToString("HHmmssff"))
-
         Clipboard.ListView1.LargeImageList = Form1.imageListLarge
 
         Form1.noOfSaves += 1
-
 
         If My.Settings.Experiments = True Then
             If File.Exists(My.Application.Info.DirectoryPath.ToString & "\" & "1.jpg") = False Then
@@ -160,16 +151,13 @@ Public Class SaveForm
                 End If
             Next
         Next
-
     End Function
 
     Private Sub httpclient_DownloadFileCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs) Handles httpclient.DownloadFileCompleted
         If My.Settings.Experiments = True Then
             a = AreSameImage(bmp, Bitmap.FromFile((My.Application.Info.DirectoryPath.ToString & "\" & "1.jpg")))
         End If
-
     End Sub
-
 
 #Region "Get DPI"
 

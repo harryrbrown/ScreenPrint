@@ -24,7 +24,6 @@ Public Class SelectableRegion1
     End Sub
 
     Private Sub SelectableRegion1_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
-
         If Cursor.Position.X > topleftX And Cursor.Position.Y > topleftY Then
             SelectableRegion2.Size = Cursor.Position - SelectableRegion2.Location
             topleftX = SelectableRegion2.Location.X
@@ -55,14 +54,11 @@ Public Class SelectableRegion1
                 SelectableRegion2.Height = Cursor.Position.Y - topleftY
             End If
         End If
-
     End Sub
 
     Private Sub SelectableRegion1_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
         Me.Hide()
-
         SaveForm.Show()
-
     End Sub
 
 #Region "Boring stuff"
