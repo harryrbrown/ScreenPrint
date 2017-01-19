@@ -241,3 +241,5 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /ScreenPrint/ApplicationEvents.vb
+
+*.db
