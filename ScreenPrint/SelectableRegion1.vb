@@ -8,7 +8,7 @@ Public Class SelectableRegion1
         Dim keyCode
         keyCode = KeySet2()
 
-        If e.KeyCode = keyCode Then
+        If e.KeyCode = keyCode Or e.KeyCode = Keys.Escape Then
             Me.Close()
         End If
     End Sub
@@ -59,6 +59,16 @@ Public Class SelectableRegion1
     Private Sub SelectableRegion1_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
         Me.Hide()
         SaveForm.Show()
+    End Sub
+
+    Private Sub SelectableRegion1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim bounds = Screen.PrimaryScreen.Bounds
+
+        For i As Integer = 0 To Screen.AllScreens.Count - 1
+            bounds = Rectangle.Union(bounds, Screen.AllScreens(i).Bounds)
+        Next
+
+        Me.Bounds = bounds
     End Sub
 
 #Region "Boring stuff"

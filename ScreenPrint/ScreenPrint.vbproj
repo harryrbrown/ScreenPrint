@@ -72,10 +72,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CB882DB5E3244EEA19975CC3B3997D81E4867D56</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6BC3F178F2D06F457324859078D02E5549851211</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Bpownsoft ScreenPrint_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ScreenPrint_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -117,7 +117,6 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Clipboard.Designer.vb">
       <DependentUpon>Clipboard.vb</DependentUpon>
     </Compile>
@@ -211,8 +210,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Bpownsoft ScreenPrint_1_TemporaryKey.pfx" />
-    <None Include="Bpownsoft ScreenPrint_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -224,6 +221,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ScreenPrint_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Header.png" />

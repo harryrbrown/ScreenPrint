@@ -486,7 +486,8 @@ Public Class Hotkey
 
         Select Case hotkeyID
             Case 1
-                bounds = Screen.PrimaryScreen.Bounds
+                bounds = Screen.AllScreens(1).Bounds 'Rectangle.Union(Screen.PrimaryScreen.Bounds, Screen.AllScreens(1).Bounds)
+
                 screenshot = New System.Drawing.Bitmap(bounds.Width * SaveForm.getScalingFactor(), bounds.Height * SaveForm.getScalingFactor(), System.Drawing.Imaging.PixelFormat.Format32bppArgb)
                 graph = Graphics.FromImage(screenshot)
 
