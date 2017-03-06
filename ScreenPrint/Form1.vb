@@ -74,6 +74,7 @@ Public Class Form1
         ComboBox2.SelectedItem = My.Settings.Key.ToString
         ComboBox4.SelectedItem = My.Settings.SelectRegionCtrlAltFn
         ComboBox5.SelectedItem = My.Settings.SelectRegionKey
+        CheckBox2.Checked = My.Settings.ColourPicker
 
 
         httpclient = New WebClient
@@ -345,6 +346,10 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        My.Settings.ColourPicker = CheckBox2.Checked
+    End Sub
+
 #End Region
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -486,7 +491,11 @@ Public Class Hotkey
 
         Select Case hotkeyID
             Case 1
-                bounds = Screen.AllScreens(1).Bounds 'Rectangle.Union(Screen.PrimaryScreen.Bounds, Screen.AllScreens(1).Bounds)
+                bounds = Screen.PrimaryScreen.Bounds
+
+                For i As Integer = 0 To Screen.AllScreens.Count - 1
+                    bounds = Rectangle.Union(bounds, Screen.AllScreens(i).Bounds)
+                Next
 
                 screenshot = New System.Drawing.Bitmap(bounds.Width * SaveForm.getScalingFactor(), bounds.Height * SaveForm.getScalingFactor(), System.Drawing.Imaging.PixelFormat.Format32bppArgb)
                 graph = Graphics.FromImage(screenshot)

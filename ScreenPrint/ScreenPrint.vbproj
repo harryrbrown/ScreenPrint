@@ -27,8 +27,8 @@
     <ProductName>ScreenPrint</ProductName>
     <PublisherName>Harry Brown</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -123,6 +123,12 @@
     <Compile Include="Clipboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ColourPicker.Designer.vb">
+      <DependentUpon>ColourPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ColourPicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clipboard.resx">
       <DependentUpon>Clipboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColourPicker.resx">
+      <DependentUpon>ColourPicker.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

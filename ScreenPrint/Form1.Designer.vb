@@ -67,6 +67,8 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -80,6 +82,7 @@ Partial Class Form1
         Me.FlowLayoutPanel3.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -97,10 +100,10 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TabPage1.Location = New System.Drawing.Point(4, 30)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 26)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(472, 258)
+        Me.TabPage1.Size = New System.Drawing.Size(472, 262)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "saving"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -123,7 +126,7 @@ Partial Class Form1
         Me.RadioButtonBMP.AutoSize = True
         Me.RadioButtonBMP.Location = New System.Drawing.Point(6, 105)
         Me.RadioButtonBMP.Name = "RadioButtonBMP"
-        Me.RadioButtonBMP.Size = New System.Drawing.Size(69, 27)
+        Me.RadioButtonBMP.Size = New System.Drawing.Size(54, 21)
         Me.RadioButtonBMP.TabIndex = 3
         Me.RadioButtonBMP.TabStop = True
         Me.RadioButtonBMP.Text = ".bmp"
@@ -134,7 +137,7 @@ Partial Class Form1
         Me.RadioButtonGIF.AutoSize = True
         Me.RadioButtonGIF.Location = New System.Drawing.Point(6, 78)
         Me.RadioButtonGIF.Name = "RadioButtonGIF"
-        Me.RadioButtonGIF.Size = New System.Drawing.Size(54, 27)
+        Me.RadioButtonGIF.Size = New System.Drawing.Size(43, 21)
         Me.RadioButtonGIF.TabIndex = 2
         Me.RadioButtonGIF.TabStop = True
         Me.RadioButtonGIF.Text = ".gif"
@@ -145,7 +148,7 @@ Partial Class Form1
         Me.RadioButtonJPG.AutoSize = True
         Me.RadioButtonJPG.Location = New System.Drawing.Point(6, 51)
         Me.RadioButtonJPG.Name = "RadioButtonJPG"
-        Me.RadioButtonJPG.Size = New System.Drawing.Size(59, 27)
+        Me.RadioButtonJPG.Size = New System.Drawing.Size(46, 21)
         Me.RadioButtonJPG.TabIndex = 1
         Me.RadioButtonJPG.TabStop = True
         Me.RadioButtonJPG.Text = ".jpg"
@@ -156,7 +159,7 @@ Partial Class Form1
         Me.RadioButtonPNG.AutoSize = True
         Me.RadioButtonPNG.Location = New System.Drawing.Point(6, 24)
         Me.RadioButtonPNG.Name = "RadioButtonPNG"
-        Me.RadioButtonPNG.Size = New System.Drawing.Size(187, 27)
+        Me.RadioButtonPNG.Size = New System.Drawing.Size(143, 21)
         Me.RadioButtonPNG.TabIndex = 0
         Me.RadioButtonPNG.TabStop = True
         Me.RadioButtonPNG.Text = ".png (recommended)"
@@ -191,18 +194,19 @@ Partial Class Form1
         '
         Me.TextBox1.Location = New System.Drawing.Point(6, 24)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(359, 29)
+        Me.TextBox1.Size = New System.Drawing.Size(359, 25)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "C:\"
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.GroupBox5)
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 30)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 26)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(472, 258)
+        Me.TabPage2.Size = New System.Drawing.Size(472, 262)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "configuration"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -212,7 +216,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.CheckBox1)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 187)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(460, 69)
+        Me.GroupBox4.Size = New System.Drawing.Size(224, 69)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "startup"
@@ -222,7 +226,7 @@ Partial Class Form1
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(6, 24)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(131, 27)
+        Me.CheckBox1.Size = New System.Drawing.Size(102, 21)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "run at startup"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -263,7 +267,7 @@ Partial Class Form1
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(301, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(131, 23)
+        Me.Label4.Size = New System.Drawing.Size(100, 17)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "selectable region"
         '
@@ -273,7 +277,7 @@ Partial Class Form1
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(152, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 23)
+        Me.Label3.Size = New System.Drawing.Size(86, 17)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "active window"
         '
@@ -283,7 +287,7 @@ Partial Class Form1
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 23)
+        Me.Label2.Size = New System.Drawing.Size(64, 17)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "full screen"
         '
@@ -305,15 +309,15 @@ Partial Class Form1
         Me.ComboBox1.Items.AddRange(New Object() {"Ctrl", "Alt"})
         Me.ComboBox1.Location = New System.Drawing.Point(3, 3)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 29)
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox1.TabIndex = 0
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(3, 35)
+        Me.Label5.Location = New System.Drawing.Point(3, 31)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(26, 23)
+        Me.Label5.Size = New System.Drawing.Size(21, 17)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "+ "
         '
@@ -322,9 +326,9 @@ Partial Class Form1
         Me.ComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"})
-        Me.ComboBox2.Location = New System.Drawing.Point(3, 61)
+        Me.ComboBox2.Location = New System.Drawing.Point(3, 51)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 29)
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox2.TabIndex = 2
         '
         'FlowLayoutPanel2
@@ -347,43 +351,43 @@ Partial Class Form1
         Me.ComboBox3.Items.AddRange(New Object() {"Shift"})
         Me.ComboBox3.Location = New System.Drawing.Point(3, 3)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 29)
+        Me.ComboBox3.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox3.TabIndex = 3
         Me.ComboBox3.Text = "Shift"
         '
         'LabelPlus2
         '
         Me.LabelPlus2.AutoSize = True
-        Me.LabelPlus2.Location = New System.Drawing.Point(3, 35)
+        Me.LabelPlus2.Location = New System.Drawing.Point(3, 31)
         Me.LabelPlus2.Name = "LabelPlus2"
-        Me.LabelPlus2.Size = New System.Drawing.Size(21, 23)
+        Me.LabelPlus2.Size = New System.Drawing.Size(17, 17)
         Me.LabelPlus2.TabIndex = 1
         Me.LabelPlus2.Text = "+"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(3, 58)
+        Me.Label7.Location = New System.Drawing.Point(3, 48)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 23)
+        Me.Label7.Size = New System.Drawing.Size(27, 17)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Ctrl"
         '
         'LabelPlus3
         '
         Me.LabelPlus3.AutoSize = True
-        Me.LabelPlus3.Location = New System.Drawing.Point(3, 81)
+        Me.LabelPlus3.Location = New System.Drawing.Point(3, 65)
         Me.LabelPlus3.Name = "LabelPlus3"
-        Me.LabelPlus3.Size = New System.Drawing.Size(21, 23)
+        Me.LabelPlus3.Size = New System.Drawing.Size(17, 17)
         Me.LabelPlus3.TabIndex = 3
         Me.LabelPlus3.Text = "+"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(130, 0)
+        Me.Label8.Location = New System.Drawing.Point(3, 82)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 69)
+        Me.Label8.Size = New System.Drawing.Size(26, 17)
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "F10"
         '
@@ -405,15 +409,15 @@ Partial Class Form1
         Me.ComboBox4.Items.AddRange(New Object() {"Ctrl", "Alt"})
         Me.ComboBox4.Location = New System.Drawing.Point(3, 3)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(121, 29)
+        Me.ComboBox4.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox4.TabIndex = 1
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(3, 35)
+        Me.Label6.Location = New System.Drawing.Point(3, 31)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(26, 23)
+        Me.Label6.Size = New System.Drawing.Size(21, 17)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "+ "
         '
@@ -422,18 +426,18 @@ Partial Class Form1
         Me.ComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"[", "]", ";", "'", "#", ",", ".", "/"})
-        Me.ComboBox5.Location = New System.Drawing.Point(3, 61)
+        Me.ComboBox5.Location = New System.Drawing.Point(3, 51)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(121, 29)
+        Me.ComboBox5.Size = New System.Drawing.Size(121, 25)
         Me.ComboBox5.TabIndex = 3
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(3, 89)
+        Me.Label9.Location = New System.Drawing.Point(3, 75)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(117, 69)
+        Me.Label9.Size = New System.Drawing.Size(113, 34)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "use this key to exit region selector"
         '
@@ -443,29 +447,29 @@ Partial Class Form1
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RestoreToolStripMenuItem, Me.ClipboardToolStripMenuItem, Me.ToolStripSeparator1, Me.CloseToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.ShowImageMargin = False
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(120, 88)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(102, 76)
         '
         'RestoreToolStripMenuItem
         '
         Me.RestoreToolStripMenuItem.Name = "RestoreToolStripMenuItem"
-        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.RestoreToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.RestoreToolStripMenuItem.Text = "Restore"
         '
         'ClipboardToolStripMenuItem
         '
         Me.ClipboardToolStripMenuItem.Name = "ClipboardToolStripMenuItem"
-        Me.ClipboardToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.ClipboardToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.ClipboardToolStripMenuItem.Text = "Clipboard"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(116, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(98, 6)
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(119, 26)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'Button3
@@ -519,9 +523,29 @@ Partial Class Form1
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.CheckBox2)
+        Me.GroupBox5.Location = New System.Drawing.Point(236, 187)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(230, 69)
+        Me.GroupBox5.TabIndex = 6
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "colour picker"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(6, 24)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(140, 21)
+        Me.CheckBox2.TabIndex = 0
+        Me.CheckBox2.Text = "enable colour picker"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(504, 349)
@@ -558,6 +582,8 @@ Partial Class Form1
         Me.FlowLayoutPanel3.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -604,5 +630,6 @@ Partial Class Form1
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ClipboardToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

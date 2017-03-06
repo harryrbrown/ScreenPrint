@@ -46,7 +46,7 @@ Partial Class About
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(201, 45)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Copyright (C) Harry Brown 2015-2016." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Thanks to Joseph Webber."
+        Me.Label3.Text = "Copyright (C) Harry Brown 2015-2017." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Thanks to Joseph Webber."
         '
         'Label2
         '

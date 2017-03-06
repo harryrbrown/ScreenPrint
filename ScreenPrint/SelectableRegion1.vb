@@ -21,6 +21,8 @@ Public Class SelectableRegion1
         SelectableRegion2.Location = SelectableRegion2.Location
         SelectableRegion2.Width = 1
         SelectableRegion2.Height = 1
+
+        ColourPicker.Hide()
     End Sub
 
     Private Sub SelectableRegion1_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
@@ -54,6 +56,21 @@ Public Class SelectableRegion1
                 SelectableRegion2.Height = Cursor.Position.Y - topleftY
             End If
         End If
+
+        If My.Settings.ColourPicker = True Then
+            ColourPicker.Left = Cursor.Position.X + 10
+            ColourPicker.Top = Cursor.Position.Y - 85
+
+            Dim a As New Drawing.Bitmap(1, 1)
+            Dim b As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(a)
+            b.CopyFromScreen(New Drawing.Point(MousePosition.X, MousePosition.Y), New Drawing.Point(0, 0), a.Size)
+            Dim c As Drawing.Color = a.GetPixel(0, 0)
+            ColourPicker.Panel1.BackColor = c
+            ColourPicker.Label2.Text = c.R
+            ColourPicker.Label3.Text = c.G
+            ColourPicker.Label4.Text = c.B
+        End If
+
     End Sub
 
     Private Sub SelectableRegion1_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
@@ -69,6 +86,8 @@ Public Class SelectableRegion1
         Next
 
         Me.Bounds = bounds
+
+        ColourPicker.Show()
     End Sub
 
 #Region "Boring stuff"
@@ -93,5 +112,9 @@ Public Class SelectableRegion1
             MsgBox("ERRO")
         End If
     End Function
+
+    Private Sub SelectableRegion1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        ColourPicker.Hide()
+    End Sub
 #End Region
 End Class
