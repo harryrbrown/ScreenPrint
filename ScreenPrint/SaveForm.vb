@@ -70,6 +70,7 @@ Public Class SaveForm
 
         SelectableRegion2.BackgroundImage = Nothing
         SelectableRegion2.Close()
+        SelectableRegion1.Close()
     End Sub
 
     Private Sub SaveForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
