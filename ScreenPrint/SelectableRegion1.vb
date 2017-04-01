@@ -63,7 +63,8 @@ Public Class SelectableRegion1
 
             Dim a As New Drawing.Bitmap(1, 1)
             Dim b As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(a)
-            b.CopyFromScreen(New Drawing.Point(MousePosition.X, MousePosition.Y), New Drawing.Point(0, 0), a.Size)
+            b.CopyFromScreen(New Drawing.Point(MousePosition.X * SaveForm.getScalingFactor(), MousePosition.Y * SaveForm.getScalingFactor()),
+                             New Drawing.Point(0, 0), a.Size)
             Dim c As Drawing.Color = a.GetPixel(0, 0)
             ColourPicker.Panel1.BackColor = c
             ColourPicker.Label2.Text = c.R

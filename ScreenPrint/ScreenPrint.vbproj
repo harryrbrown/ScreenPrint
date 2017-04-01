@@ -72,10 +72,10 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6BC3F178F2D06F457324859078D02E5549851211</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>04EF43FC968776E3C1317BDE42C61F61E258DF5D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ScreenPrint_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ScreenPrint_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -230,6 +230,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="ScreenPrint_1_TemporaryKey.pfx" />
     <None Include="ScreenPrint_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
